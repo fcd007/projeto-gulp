@@ -14,6 +14,11 @@ function compilaSass() {
     cascade: false
   }))
 }
-
 //gulp.task("sass", compilaSass); //executar como $gulp sass
-gulp.task('default', compilaSass); // executa oomo padrão $ gulp
+gulp.task('sass', compilaSass); // executa oomo padrão $ gulp
+
+function watch() {
+  gulp.watch('src/scss/*.scss', compilaSass);
+}
+
+gulp.task('default', watch);
