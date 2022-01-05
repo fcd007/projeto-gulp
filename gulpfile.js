@@ -4,6 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
+const babel = require('gulp-babel');
 
 //função para compilar o SASS e os prefixos
 function compilaSass() {
@@ -26,6 +27,9 @@ gulp.task('sass', compilaSass); // executa oomo padrão $ gulp
 //função para juntar arquivos .js
 function gulpJS() {
   return gulp.src('src/js/main/*.js') //tenha o arquivo que gera loop - usar '!nomeFile.js'
+  .pipe(babel({
+    presets: ['@babel/preset-env']
+  }))
   .pipe(concat('main.js'))
   .pipe(gulp.dest('src/js'))
 }
