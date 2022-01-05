@@ -12,8 +12,6 @@
   var img = document.querySelector('.modal-img');
   img.addEventListener('click', animaImg);
 }
-"use strict";
-
 {
   var activeModal = function activeModal(e) {
     e.preventDefault();

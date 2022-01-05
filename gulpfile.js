@@ -27,10 +27,10 @@ gulp.task('sass', compilaSass); // executa oomo padrão $ gulp
 //função para juntar arquivos .js
 function gulpJS() {
   return gulp.src('src/js/main/*.js') //tenha o arquivo que gera loop - usar '!nomeFile.js'
+  .pipe(concat('main.js'))
   .pipe(babel({
     presets: ['@babel/preset-env']
   }))
-  .pipe(concat('main.js'))
   .pipe(gulp.dest('src/js'))
 }
 
