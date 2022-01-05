@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "git-commit-msg-linter": "^3.2.8",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2"
   }
 }
