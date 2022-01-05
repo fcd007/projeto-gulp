@@ -40,6 +40,16 @@ function gulpJS() {
 //tarefa para concat
 gulp.task('mainjs', gulpJS);
 
+// JS Plugins
+function pluginJS() {
+  return gulp
+  .src(['node_modules/jquery/dist/jquery.min.js'])
+  .pipe(concat('plugin.js'))
+  .pipe(gulp.dest('src/js'))
+  .pipe(browserSync.stream())
+}
+
+gulp.task('plugins', pluginJS)
 //função para inicia ro browser
 function browser() {
   browserSync.init( {
